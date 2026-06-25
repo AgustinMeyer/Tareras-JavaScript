@@ -1,8 +1,8 @@
-let frase= prompt("Ingrese una frase:");
+ let frase= prompt("Ingrese una frase:");
 let palabra= prompt("Ingrese la palabra que quiera buscar:");
 
-let fraseMinuscula= frase.toLowerCase;
-let palabraMinuscula= palabra.toLowerCase;
+let fraseMinuscula= frase.toLowerCase();
+let palabraMinuscula= palabra.toLowerCase();
 
 if(fraseMinuscula.includes(palabraMinuscula)){
     console.log(`Si la palrabra ${palabra} se encuentra en la frase"`)
@@ -18,7 +18,7 @@ if (intento === numeroSecreto) {
     console.log(`¡Ganaste! Adivinaste el número secreto (${numeroSecreto}).`);
 } else {
     console.log(`Perdiste. El número secreto era ${numeroSecreto}. Tu número fue ${intento}.`);
-}
+} 
 
 // Tarea 3
 alert("Bienvenido, te voy a sugerir la bebida para acomañar tu plato");
