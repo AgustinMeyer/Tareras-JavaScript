@@ -1,4 +1,4 @@
- let frase= prompt("Ingrese una frase:");
+let frase= prompt("Ingrese una frase:");
 let palabra= prompt("Ingrese la palabra que quiera buscar:");
 
 let fraseMinuscula= frase.toLowerCase();
