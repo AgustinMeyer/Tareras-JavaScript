@@ -1,47 +1,38 @@
-// tarea 3
-const palabras = ["jAvAsCrIpT", "pRoGrAmAcIoN", "eJeRcIcIo"];
-const palabrasConvertida= [];
-for (let i = 0; i < palabras.length; i++) {
-    let palabraActual = palabras[i];
-    let primeraLetra = palabraActual.charAt(0).toUpperCase();
-    let restoDeLaPalabra = palabraActual.slice(1).toLowerCase();
-    let palabraCorregida= primeraLetra + restoDeLaPalabra;
-    
-    palabrasConvertida.push(palabraCorregida);
-    
+// tarea 1
+
+const gradosCelsius = [0, 10, 20, 30, 40]
+const convertirAFahrenheit = gradosCelsius.map((grado, i )=> {
+    let convertir = (grado * 9/5) + 32;
+    return convertir;
+})
+
+console.log(convertirAFahrenheit)
+
+// tarea 2
+const edades = [12, 18, 25, 10, 30, 15]
+const obtenerMayoresDeEdad = (listaDeEdades) =>{
+    return listaDeEdades.filter(edad => edad >= 18);
 }
 
-console.log(palabrasConvertida);
+const mayoresDeEdad = obtenerMayoresDeEdad(edades)
+console.log(mayoresDeEdad);
+
+// tarea 3
+const codigoDeProductos = ["A10", "B20", "C30", "D40"]
+
+const buscarProducto =(listaCodigos, codigoBuscado) => {
+    const codEncontrado = listaCodigos.find(codigo => codigo === codigoBuscado);
+    return codEncontrado ? codEncontrado : "No encontrado";
+};
+
+console.log(buscarProducto(codigoDeProductos,"C30"));
+console.log(buscarProducto(codigoDeProductos, "a40"));
 
 // tarea 4
-const temperaturas = [18, 22, 15, 28, 12, 25, 19];
-let temperaturaMaxima = temperaturas[0];
-let temperaturaMinima = temperaturas[0];
-for (let i = 0; i < temperaturas.length; i++) {
-    if (temperaturas[i]> temperaturaMaxima) {
-        temperaturaMaxima = temperaturas[i];
-    }if (temperaturas[i]< temperaturaMinima) {
-      temperaturaMinima = temperaturas[i];
-    } 
-    
-}
-console.log(temperaturaMaxima);
-console.log(temperaturaMinima);
 
-// Tarea 5
+const ventasDelDia = [100, 250, 50, 300, 120]
 
-const datos = [1, 2, 3, 4, 5, 6, 7, 8];
-const datosAlCuadrado= [];
+const calculaTotalVentas = ventasDelDia.reduce((accum,valor) => accum + valor, 0)
 
-for (let i = 0; i < datos.length; i++) {
-    let numeroActual= datos[i]
-    
-    if (numeroActual % 2=== 0 ) {
-        let cuadrado = numeroActual * numeroActual;
-        datosAlCuadrado.push(cuadrado)
-    } else{
-        datosAlCuadrado.push(numeroActual);
-    }
-    
-}
-console.log(datosAlCuadrado)
+console.log(calculaTotalVentas)
+
