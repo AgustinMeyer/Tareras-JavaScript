@@ -36,3 +36,17 @@ const calculaTotalVentas = ventasDelDia.reduce((accum,valor) => accum + valor, 0
 
 console.log(calculaTotalVentas)
 
+// tarea 5
+
+const inventario = [
+    { nombre: "procesador", precio: 300000 },
+    { nombre: "Placa de Video", precio: 600000 },
+    { nombre: "Memoria Ram", precio: 80000}
+];
+
+const listaDePrecios= (listaProductos) =>{
+    return listaProductos.map(producto => producto.precio);
+}
+
+const soloPrecios = listaDePrecios(inventario)
+console.log(soloPrecios);
