@@ -50,3 +50,31 @@ const listaDePrecios= (listaProductos) =>{
 
 const soloPrecios = listaDePrecios(inventario)
 console.log(soloPrecios);
+
+
+// tarea 6 Tienes un array de objetos llamado estudiantesdonde cada uno tiene nombrey nota. Usa .filter()para obtener solo los estudiantes que aprobaron (nota >= 6). A esos estudiantes aprobados, usa .map()para obtener solo sus nombres en un nuevo array.
+
+/* Algorito:
+1-Creamos un array con los nombres y nota de los estudiantes
+2-Creamos la funcion para que retorne solo los nombre de los alumnos aprobados
+3-En la funcion usamos .filter para filtrar la nota mayor a 6
+4-Con el resultadeo de .filter usamos el .map para retornar solo los nombres de los aprobados
+5-Probamos el funcionamiento de la funcion
+*/
+const estudiantes = [
+  { nombre: "Ana", nota: 8 },
+  { nombre: "Beto", nota: 4 },
+  { nombre: "Carla", nota: 10 },
+  { nombre: "David", nota: 5 }
+];
+
+const alumnosAprobados = (listaEstudiantes) => {
+    return listaEstudiantes
+    .filter( alumno => alumno.nota >= 6)
+    .map( alumno => alumno.nombre)
+
+};
+
+const resultado = alumnosAprobados(estudiantes)
+
+console.log(resultado);
