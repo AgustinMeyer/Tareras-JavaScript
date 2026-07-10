@@ -1,4 +1,5 @@
-// tarea 1
+//  Imagina que quieres ahorrar para un objetivo de $1000. El programa debe pedir al usuario que ingrese montos de ahorro diarios (en un prompto variable) y los sumando. El ciclo whiledebe ejecutarse mientras la suma total sea menor a $1000. Al llegar o superar el objetivo, imprime "¡Objetivo alcanzado!".
+
 let totalAhorrado= 0;
 let meta = 1000;
 while (totalAhorrado<meta) {
@@ -14,7 +15,8 @@ while (totalAhorrado<meta) {
 
 alert("¡Objetivo alcanzado!");
 
-// tarea 2
+//  Utiliza dos bucles for(uno dentro de otro) para imprimir un triángulo de asteriscos en la consola con una altura de 5 líneas:
+
 for (let fila = 1; fila <= 5; fila++) {
     lineaDeAsteriscos = ""
 
@@ -27,7 +29,7 @@ for (let fila = 1; fila <= 5; fila++) {
     
 }
 
-// Tarea 3
+// El Simulador de "Token de Seguridad
 
 const CODIGO= "1234";
 const MAX_INTENTOS = 3;
@@ -55,7 +57,7 @@ if (!autenticado) {
     alert("🔒 Cuenta bloqueada, se te acabaron los intentos.")
 }
 
-// Tarea 4
+// Gestor de Horas de Estudio
 
 let totalHoras = 0;
 const DIAS_SEMANA = 7;
@@ -78,7 +80,7 @@ alert(`📊 Resumen de la semana:\n- Total de horas estudiadas: ${totalHoras} hs
 console.log(`Total horas: ${totalHoras}. Promedio: ${promedio}`);
 
 
-// Tarea 5
+// Simulador de "Carrito de Descuentos Progresivos" 
 
 let totalAcumulado = 0;
 let continuar = "si";
