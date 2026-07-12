@@ -47,3 +47,35 @@ const filtrarTienda = ( listaDePruductos, textoBuscado, precioMaximo) =>{
 
 const busquedaUsuario = filtrarTienda(catalogo, "celular", 500000);
 console.log(busquedaUsuario);
+
+/*
+Consigna: El Validador de ContraseñasVas a crear una función que reciba una contraseña propuesta por un usuario y verifique si cumple con las reglas de seguridad de la empresa mediante un ciclo que analice letra por letra.
+Las Reglas de Seguridad:Debe tener un largo mínimo de 8 caracteres.Debe contener al menos un número (del 0 al 9).
+Debe contener al menos un carácter especial válido (vamos a usar el asterisco * o el signo de exclamación !).
+Pasos que debe realizar tu script:Crear la Función: Desarrolla una función llamada validarContrasena que reciba un parámetro de texto (textoClave).Primer Filtro (Condicional): Lo primero que debe hacer la función es medir el largo del texto. Si tiene menos de 8 caracteres, debe retornar directamente el mensaje: "Rechazada: Demasiado corta".
+El Análisis Letra por Letra (Ciclo for clásico): Si pasa el largo mínimo, debes crear un ciclo for que recorra el texto carácter por carácter.Tip: Puedes usar textoClave[i] dentro del ciclo para obtener la letra de la vuelta actual.Las Variables Bandera (Flags): Antes del ciclo, crea dos variables booleanas en false: let tieneNumero = false; y let tieneEspecial = false;.La Lógica dentro del Ciclo (Condicionales): En cada vuelta del bucle, debes evaluar el carácter actual:Si el carácter es un número, cambias tieneNumero = true. (Puedes verificarlo viendo si es un número válido usando !isNaN(textoClave[i]) y que no sea un espacio en blanco).Si el carácter es un * o un !, cambias tieneEspecial = true.El Retorno: Al terminar el ciclo for, evalúas las banderas:Si ambas terminaron en true, retornas "Contraseña Segura".Si falta alguna, retornas "Rechazada: Falta número o carácter especial".
+*/
+
+function validarContrasena(textoClave) {
+    let tieneNumero= false;
+    let tieneEspecial = false;
+    if (textoClave.length < 8) {
+        return `❌ Rechazada: Demasiada corta.`
+    }
+    for (let i = 0; i < textoClave.length; i++) {
+            if (!isNaN(textoClave[i])&& textoClave[i] !== " ") {
+                tieneNumero = true;
+            }else if(textoClave[i] === "*" || textoClave[i] === "!"){
+                tieneEspecial = true;
+            }
+        }
+    if (tieneNumero && tieneEspecial === true) {
+        return `🔒 Contraseña segura.`
+    }else{
+        return `❌ Rechazada: Falta un numero o un caracter especial.`
+    }
+}
+
+console.log(validarContrasena("abc12"));
+console.log(validarContrasena("password123 "));
+console.log(validarContrasena("Agustin2026!"));
