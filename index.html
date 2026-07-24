@@ -10,8 +10,32 @@
   <body class="bg-light p-4">
     <div class="container">
       <h1 id="contador" class="display-1 fw-bold">10</h1>
-      <button id="btnIniciar" class="btn btn-primary btn-lg mt-3">Iniciar cuenta regresiva</button>
-      
+      <button id="btnIniciar" class="btn btn-primary btn-lg mt-3">
+        Iniciar cuenta regresiva
+      </button>
+    </div>
+    <div
+      id="semaforo"
+      style="
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+        border-radius: 50%;
+      "
+    ></div>
+    <button id="btnSemaforo">Encender Semáforo</button>
+    <br />
+
+    <button id="btnGuardar" class="btn btn-success m-2">Guardar Cambios</button>
+    <div id="alerta" class="alert alert-success mt-3 d-none" role="alert">
+      ¡Datos guardados con éxito!
+    </div>
+    <br />
+    <button id="btnCargar" class="btn btn-primary mb-3">Cargar Usuario</button>
+    <div id="tarjeta" class="card p-3" style="width: 18rem">
+      <p>Haz clic en el botón para ver los datos...</p>
+    </div>
+
     <script src="app.js"></script>
   </body>
 </html>
