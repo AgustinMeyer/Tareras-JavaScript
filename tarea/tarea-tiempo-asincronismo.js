@@ -132,3 +132,34 @@ btnCargar.addEventListener("click",async()=>{
     btnCargar.disabled = false;
     btnCargar.textContent = "Cargar Usuario";
 })
+
+/*
+Ejercicio 5: "Galería de Personajes con Indicador de Carga" (Asincronismo completo)
+Consigna: Crea una aplicación que al presionar un botón "Buscar Personaje" muestre temporalmente el texto "Cargando..." en pantalla. Luego, mediante una fetchAPI de Rick and Morty ( [https://rickandmortyapi.com/api/character/5](https://rickandmortyapi.com/api/character/5)), obtiene un personaje, borra el texto de carga y muestra su nombre y su imagen en el DOM.
+
+Consejos para resolverlo:
+
+Antes de hacer el await fetch(...), actualice el contenedor #resultadocon un texto o un Spinner de Bootstrap para simular la espera.
+
+Cuando obtengas los datos de la API, reemplaza el contenido del contenedor utilizando las propiedades data.namey data.imagedel objeto que te devuelve la API.
+*/
+const btnPersonaje = document.querySelector("#btnPersonaje");
+const resultado = document.querySelector("#resultado");
+
+btnPersonaje.addEventListener("click",async()=>{
+    btnPersonaje.disabled = true;
+    resultado.innerHTML = `<p>Cargando...</p>`;
+
+    const respuesta = await fetch("https://rickandmortyapi.com/api/character/5");
+    const data = await respuesta.json();
+    resultado.innerHTML= `
+    <div class="card" style="width: 14rem;">
+        <img src="${data.image}" class="card-img-top" alt="${data.name}">
+        <div class="card-body text-center">
+            <h5 class="card-title fw-bold mb-0">${data.name}</h5>
+        </div>
+    </div>`
+
+    btnPersonaje.disabled = false;
+    
+})
