@@ -56,24 +56,22 @@ btnSemaforo.addEventListener("click",()=>{
 
     btnSemaforo.disabled = true;
     btnSemaforo.textContent = "Cambiando";
-   setTimeout(()=>{
-         semaforo.style.backgroundColor ="red";
-
-   },1000);
+    semaforo.style.backgroundColor ="red";
 
    setTimeout(()=>{
     semaforo.style.backgroundColor = "yellow";
-   },4000)
+   },3000)
 
    setTimeout(()=>{
     semaforo.style.backgroundColor = "green"
-   },6000)
+   },5000)
 
    setTimeout(()=>{
-    semaforo.style.backgroundColor = "";
+    semaforo.style.backgroundColor = colorOriginal;
     btnSemaforo.disabled= false;
-    btnSemaforo.textContent = colorOriginal;
-   },9000)
+    btnSemaforo.textContent = "Encender semaforo";
+    
+   },8000)
 })
 
 /*
@@ -95,10 +93,8 @@ const btnGuardar = document.querySelector("#btnGuardar");
 const texto = document.querySelector("#alerta");
 
 btnGuardar.addEventListener("click",()=>{
-    setTimeout(()=>{
-        texto.classList.remove("d-none");
-        texto.textContent = "Datos Guardados";
-    },0)
+    texto.classList.remove("d-none");
+    texto.textContent = "Datos Guardados";
 
     setTimeout(()=>{
         texto.classList.add("d-none");
