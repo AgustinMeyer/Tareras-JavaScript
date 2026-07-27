@@ -19,9 +19,14 @@ btnIniciar.addEventListener("click" , ()=>{
         }else{
             contadorElemento.textContent= "!Despegue¡ 🚀";
             clearInterval(temporizador);
-
+            temporizador = null;
             btnIniciar.disabled= false;
             btnIniciar.textContent= "Reiniciar";
+            temporizador = null;
+            setTimeout(()=>{
+                contadorElemento.textContent = "10";
+            },1500)
+            
         }
 
     },1000); 
